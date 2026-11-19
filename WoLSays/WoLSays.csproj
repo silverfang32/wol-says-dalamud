@@ -1,0 +1,29 @@
+<Project>
+  <Import Project="Sdk.props" Sdk="Dalamud.NET.Sdk" Version="15.0.0" Condition="'$(UseLocalDalamudReferences)' != 'true'" />
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" Condition="'$(UseLocalDalamudReferences)' == 'true'" />
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <PlatformTarget>x64</PlatformTarget>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>1.0.0.0</Version>
+    <Name>WoL Says</Name>
+    <Author>silverfang32</Author>
+    <Punchline>A clickable overlay for tracking one very particular mechanic.  -- '*It's time for us to talk back'*, unknown</Punchline>
+    <Description>WoL Says (Warrior of Light Says) is a compact manual overlay for Kefka Says. Use /wolsays to track two mechanic sets, Inferno and Tsunami shapes, and Thunder and Ice floor positions. Click to record each callout and use Reset between pulls.</Description>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(UseLocalDalamudReferences)' == 'true'">
+    <DalamudReferencePath Condition="'$(DALAMUD_HOME)' != ''">$(DALAMUD_HOME)</DalamudReferencePath>
+    <DalamudReferencePath Condition="'$(DalamudReferencePath)' == ''">$(APPDATA)/XIVLauncher/addon/Hooks/dev</DalamudReferencePath>
+  </PropertyGroup>
+  <ItemGroup Condition="'$(UseLocalDalamudReferences)' == 'true'">
+    <Reference Include="Dalamud" HintPath="$(DalamudReferencePath)/Dalamud.dll" Private="false" />
+    <Reference Include="Dalamud.Bindings.ImGui" HintPath="$(DalamudReferencePath)/Dalamud.Bindings.ImGui.dll" Private="false" />
+    <None Update="WoLSays.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Assets/*.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" Condition="'$(UseLocalDalamudReferences)' == 'true'" />
+  <Import Project="Sdk.targets" Sdk="Dalamud.NET.Sdk" Version="15.0.0" Condition="'$(UseLocalDalamudReferences)' != 'true'" />
+</Project>
