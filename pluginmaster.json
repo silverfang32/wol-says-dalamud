@@ -3,7 +3,7 @@
     "Author": "silverfang32",
     "Name": "WoL Says",
     "InternalName": "WoLSays",
-    "AssemblyVersion": "1.0.0.0",
+    "AssemblyVersion": "1.0.1.0",
     "Punchline": "A clickable overlay for tracking one very particular mechanic.  -- '*It's time for us to talk back'*, unknown",
     "Description": "WoL Says (Warrior of Light Says) is a compact manual overlay for Kefka Says. Use /wolsays to track two mechanic sets, Inferno and Tsunami shapes, and Thunder and Ice floor positions. Click to record each callout and use Reset between pulls.",
     "ApplicableVersion": "any",
@@ -14,11 +14,11 @@
       "mechanics",
       "kefka"
     ],
-    "Changelog": "First public release. Includes the manual tracker, movable overlay, and adjustable background opacity.",
+    "Changelog": "Added Disable mouseover hints in plugin settings. Enabled by default for the overlay; keyboard-focus hints are still available.",
     "RepoUrl": "https://github.com/silverfang32/wol-says-dalamud",
     "IconUrl": "https://raw.githubusercontent.com/silverfang32/wol-says-dalamud/main/images/icon.png",
-    "DownloadLinkInstall": "https://github.com/silverfang32/wol-says-dalamud/releases/download/v1.0.0.0/WoLSays.zip",
-    "DownloadLinkUpdate": "https://github.com/silverfang32/wol-says-dalamud/releases/download/v1.0.0.0/WoLSays.zip",
-    "LastUpdate": 1795121592
+    "DownloadLinkInstall": "https://github.com/silverfang32/wol-says-dalamud/releases/download/v1.0.1.0/WoLSays.zip",
+    "DownloadLinkUpdate": "https://github.com/silverfang32/wol-says-dalamud/releases/download/v1.0.1.0/WoLSays.zip",
+    "LastUpdate": 1795122939
   }
 ]

@@ -181,7 +181,9 @@ internal sealed class Overlay : Window
         bool clicked = ImGui.Button(label, new Vector2(width, height) * scale);
         if (textColor.HasValue)
             ImGui.PopStyleColor();
-        if (ImGui.IsItemHovered() || (ImGui.GetIO().NavVisible && ImGui.IsItemFocused()))
+        bool mouseoverHint = !settings.DisableMouseoverHints && ImGui.IsItemHovered();
+        bool focusHint = ImGui.GetIO().NavVisible && ImGui.IsItemFocused();
+        if (mouseoverHint || focusHint)
             ImGui.SetTooltip(tooltip);
         return clicked;
     }
