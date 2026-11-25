@@ -70,8 +70,12 @@ internal sealed class Overlay : Window
             if (!settings.LockPosition)
                 DrawMoveHandle();
 
-            if (Button("Reset", 184, 6, 48, 21, "Start fresh and clear all encounter values"))
+            if (Button("Reset", 160, 6, 48, 21, "Start fresh and clear all encounter values"))
                 encounter.Reset();
+
+            if (Button("##Close", 211, 6, 21, 21, "Close the WoL Says overlay"))
+                IsOpen = false;
+            DrawGlyph(Glyph.Cross, 221.5f, 16.5f, 15, Muted);
 
             DrawSet(SetSlot.First, "1st", 8);
             DrawSet(SetSlot.Second, "2nd", 124);
